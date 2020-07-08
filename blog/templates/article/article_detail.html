@@ -1,0 +1,37 @@
+{% extends 'mainbase.html' %}
+{% block content %}
+
+
+
+<div class="container-fluid text-left" style="margin-top:70px; style="background-color:LightGray;">
+    <div class="detail">
+        <div class="row" style="background-color:GhostWhite ;">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                        <img src="{{blogdetails.thumb.url}}" class="card-img-top img-fluid" style="height:183px;" style="width:190px;"/>
+                        <h2 class="text-center"><strong>{{blogdetails.title}}</strong></h2>
+                        <p class="text-left">{{blogdetails.content | linebreaks}}</p>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12  align-items-center justify-content-center">
+                <script type="text/javascript">
+  ( function() {
+    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+    var unit = {"calltype":"async[2]","publisher":"Ridwanray","width":300,"height":250,"sid":"Chitika Default"};
+    var placement_id = window.CHITIKA.units.length;
+    window.CHITIKA.units.push(unit);
+    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+</script>
+<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script><br>
+
+<a href="//www.chitika.com/publishers/apply?refid=ridwanray"><img src="//images.chitika.net/ref_banners/300x250_hidden_ad.png" /></a><br>
+
+
+
+                </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

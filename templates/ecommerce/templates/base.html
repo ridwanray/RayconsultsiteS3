@@ -1,0 +1,86 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+     <link href="{% static 'img/favicon.jpg' %}" rel="icon">
+     <!-- Bootstrap CSS File -->
+
+    <title>{% block head_title %}RayConsult | Products{% endblock %}</title>
+
+    {% include 'ecommerce/templates/head_css.html' %}
+
+      <style>
+      {% block style %}{% endblock %}
+      </style>
+
+
+
+  </head>
+
+  <body>
+  {% include 'ecommerce/templates/navbar.html' %}
+
+{% if messages %}
+
+<div class='container'>
+<div class='alert alert-success text-center alert-dismissible'>
+ <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+{% for message in messages %}
+  <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p><br/>
+  {% endfor %}
+</div>
+
+</div>
+{% endif %}
+
+{% block jumbotron %}
+
+{% endblock %}
+    <div class="container">
+
+
+
+            {% block content %}
+
+            {% endblock %}
+
+
+    </div> <!-- /container -->
+
+    {% include "ecommerce/templates/javascript.html" %}
+
+    <script>
+    $(document).ready(function(){
+        {% block jquery %}
+        {% endblock %}
+    });
+
+    </script>
+    <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','//widgets.getsitecontrol.com/145422/script.js');
+</script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5b65f75be21878736ba2a0fc/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+    </body  style=" min-height: 100vh;">
+
+
+</html>

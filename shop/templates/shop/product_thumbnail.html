@@ -1,0 +1,39 @@
+
+<div class="thumbnail text-center" >
+<h4 style="margin-top:0px;"><a href='{{ product.get_absolute_url }}'>{{ product.title }}</a></h4>
+	{% if product.get_image_url %}
+	<a href='{{ product.get_absolute_url }}'><img style=" height: 177px;
+    width: 100%;  margin-bottom:0px;" id='img' class='img-responsive' src='{{ product.get_image_url }}' /></a><hr/>
+	{% endif %}
+
+
+<div class="card card-pricing text-center px-3 mb-4" style="
+.card-pricing.popular {
+    z-index: 1;
+    border: 3px solid #007bff;
+}
+.card-pricing .list-unstyled li {
+    padding: .5rem 0;
+    color: #6c757d;
+}
+
+">
+            <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-success text-white shadow-sm">Standard</span>
+            <div class="bg-transparent card-header pt-4 border-0">
+                <h1 class="h1 font-weight-normal text-primary text-center mb-0" data-pricing-value="15">$<span class="price"> {{ product.variation_set.first.get_html_price }}</span><span class="h6 text-muted ml-2">/ per project</span></h1>
+            </div>
+            <div class="card-body pt-0">
+                <ul class="list-unstyled mb-4">
+                    <li>Unlimited Revisions</li>
+                    <li>Basic after-project supports</li>
+                    <li>Project updates</li>
+                    <li>Free cancelation</li>
+                </ul>
+                <a href='{{ product.get_absolute_url }}'><button type="button" class="btn btn-primary mb-3">Order now</button></a>
+            </div>
+        </div>
+
+
+	{% if price == "True" %}
+	{% endif %}
+</div>

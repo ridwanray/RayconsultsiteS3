@@ -1,0 +1,31 @@
+{% extends 'mainbase.html' %}
+{% block content %}
+<div class="container-fluid text-center" style="margin-top:82px;">
+    <div>
+        <div class="row">
+            {% for bloglisting in bloglistings %}
+            <div class="col-12 col-md-6 col-lg-4 mb-5">
+				<div class="card style="margin:0rem;"">
+					<img src="{{bloglisting.thumb.url}}" class="card-img-top img-fluid" style="height:183px;" style="width:276px;" />
+        			<div class="card-block">
+                    					    <div style="background-color:GhostWhite ;">
+                        	                    <h5 class="card-title h5 my-0 py-0 text-info text-center" style="background-color:GhostWhite ;"> {{bloglisting.title}}</h5>
+                        					    <hr class="hr-light"/>
+                    					    </div>
+    					                     <p class="text-center">{{bloglisting.snippet}}</p>
+    					   <small class="text-muted text-right">
+
+                                    October 2018
+                                    <span class="ml-3 fa fa-tags"></span>
+                                    <a class="badge badge-light text-muted">latest</a>
+                                 <a href="{% url 'blogdetail' slug=bloglisting.slug %}" ><span class="badge badge-secondary">Read more <i class="fa fa-angle-double-right"></i></span></a>
+                           </small>
+
+    				    </div>
+                </div>
+            </div>
+ {% endfor %}
+{% endblock %}
+</div>
+    </div>
+        </div>

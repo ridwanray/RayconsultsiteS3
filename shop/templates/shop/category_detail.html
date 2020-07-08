@@ -1,0 +1,23 @@
+{% extends "ecommerce/templates/base.html" %}
+
+
+{% block content %}
+
+<h3>{{ object.title }}</h3>
+
+
+
+<div class='row'>
+{% for product in products %}
+
+
+	<div class='col-xs-4'>
+		{% include "shop/product_thumbnail.html" with product=product price=True %}
+	</div>
+	{% cycle '' '' '</div><div class="row">' %}
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
